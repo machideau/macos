@@ -44,12 +44,12 @@ ADD --chmod=644 \
 
 ADD $REPO_KVM_OPENCORE/releases/download/$VERSION_KVM_OPENCORE/OpenCore-$VERSION_KVM_OPENCORE.iso.gz /opencore.iso.gz
 
-VOLUME /storage
+RUN mkdir -p /storage
 EXPOSE 5900 8006
 
 ENV VERSION="14"
-ENV RAM_SIZE="4G"
+ENV RAM_SIZE="8G"
 ENV CPU_CORES="1"
-ENV DISK_SIZE="64G"
+ENV DISK_SIZE="128G"
 
 ENTRYPOINT ["/usr/bin/tini", "-s", "/run/entry.sh"]
